@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>SVG/Canvas</title>
+        <script>
+            function can()
+            {
+                const c1 = document.querySelector("#c1");
+                const ctx = c1.getContext("2d");
+                ctx.fillStyle = "green";
+                ctx.fillRect(10, 10, 100, 50);
+                ctx.strokeStyle = "red";
+                ctx.lineWidth = 2; 
+                ctx.strokeRect(10, 10, 100, 50);
+                const gradient = ctx.createLinearGradient(130, 100, 300, 200);
+                gradient.addColorStop(0, 'lightblue');
+                gradient.addColorStop(1, 'darkblue');
+                ctx.fillStyle = gradient;
+                ctx.beginPath();  
+                ctx.ellipse(200, 50, 80, 40, 0, 0, 2 * Math.PI); 
+                ctx.fill();
+                ctx.strokeStyle = "black";
+                ctx.stroke();
+                ctx.beginPath();  
+                ctx.strokeStyle = "orange";  
+                ctx.lineWidth = 100;  
+                ctx.arc(200, 100, 30, 0, Math.PI, false);  
+                ctx.stroke(); 
+                ctx.beginPath();  
+                ctx.moveTo(50, 150);  
+                ctx.lineTo(200, 200); 
+                ctx.strokeStyle = "red";  
+                ctx.lineWidth = 4; 
+                ctx.stroke(); 
+            }
+        </script>
+    </head>
+    <body onload="can()">
+        <canvas id="c1" width="400px" height="200px" style="border:1px solid #000000"></canvas>
+    </body>
+</html>

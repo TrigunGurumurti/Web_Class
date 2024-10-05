@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h2>Method Cleaning</h1>
+    <button value="click" class="btn">click</button>
+    <script>
+        $(".btn").click(function()
+    {
+        $("h2").fadeTo(1000,0.4).slideUp(1000).slideDown(1000).fadeTo(1000,100);
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Class Filter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#filterButton").click(function() {
+            var filterText = $("#filterInput").val().toLowerCase();
+            
+            // First hide all subjects
+            $(".subject").hide();
+            
+            // Then show only those that contain the filter text
+            $(".subject").each(function() {
+                var subject = $(this).text().toLowerCase();
+                if (subject.indexOf(filterText) > -1) {
+                    $(this).show();
+                }
+            });
+        });
+    });
+    </script>
+    <style>
+        .subject {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="filterInput" placeholder="Enter class to filter">
+    <button id="filterButton">Filter</button>
+    
+    <div id="subjectList">
+        <h3>III Sem Subjects</h3>
+        <div class="subject">DSA</div>
+        <div class="subject">MCSE</div>
+        <div class="subject">DDCO</div>
+        <div class="subject">WT</div>
+        <div class="subject">AFLL</div>
+    </div>
+</body>
+</html>
